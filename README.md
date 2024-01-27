@@ -17,7 +17,7 @@ var xpos;
 var ypos;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(500, 400);
   xpos = 200;
   ypos = 200;
 }
@@ -48,7 +48,7 @@ var xpos, ypos;
 var horizontalSpeed, verticalSpeed;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(500, 400);
   xpos = 200;
   ypos = 200;
   horizontalSpeed = 3;
