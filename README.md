@@ -61,6 +61,12 @@ function draw() {
   ypos += verticalSpeed;
   drawCircle(xpos, ypos, 50);
 }
+
+function drawCircle(x, y, size) {
+  fill('blue');
+  noStroke();
+  ellipse(x, y, size, size);
+}
 ```
 
 ## Section 2: Implementing Collision Detection
