@@ -107,16 +107,45 @@ We'll add a vertical bar that can be moved up and down using the arrow keys.
 
 ### Updated Code:
 ```javascript
+
+var xpos, ypos;
+var horizontalSpeed, verticalSpeed;
 var barY;
 
 function setup() {
-  // ... (previous setup code)
+  createCanvas(400, 400);
+  xpos = 200;
+  ypos = 200;
+  horizontalSpeed = 3;
+  verticalSpeed = 3;
   barY = height / 2;
 }
 
 function draw() {
-  // ... (previous draw code)
+  background(220);
+  xpos += horizontalSpeed;
+  ypos += verticalSpeed;
+
+  if (xpos > width - 25 || xpos < 25) {
+    horizontalSpeed *= -1;
+  }
+
+  if (ypos > height - 25 || ypos < 25) {
+    verticalSpeed *= -1;
+  }
+
+  if (xpos > 330 && ypos > barY && ypos < barY + 100) {
+    horizontalSpeed *= -1;
+  }
+
+  drawCircle(xpos, ypos, 50);
   drawBar();
+}
+
+function drawCircle(x, y, size) {
+  fill('blue');
+  noStroke();
+  ellipse(x, y, size, size);
 }
 
 function drawBar() {
